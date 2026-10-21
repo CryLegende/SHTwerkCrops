@@ -83,7 +83,7 @@ public class SHTwerkCrops extends JavaPlugin implements Listener {
                                 block.setBlockData(ageable);
                                 // Afficher les particules directement sur la crop (1 bloc plus bas)
                                 block.getWorld().spawnParticle(
-                                    Particle.VILLAGER_HAPPY,
+                                    Particle.HAPPY_VILLAGER,
                                     block.getLocation().add(0.5, 0, 0.5),
                                     5, 0.2, 0.2, 0.2, 0.0
                                 );
