@@ -1,0 +1,25 @@
+# Configuration du plugin SHTwerkCrops
+
+# Rayon autour du joueur où les plantations seront affectées
+radius: 2
+
+# Chance d'activation à chaque pression de la touche shift (entre 0 et 100)
+chance: 35
+
+# Cooldown en millisecondes entre chaque activation réussie
+cooldown: 500
+
+# Liste noire des blocs à ignorer.
+# Ajoute en quote les blocs ageables que tu souhaites ignorer, par exemple :
+blacklist:
+# "WHEAT"
+# "CARROTS"
+# "POTATOES"
+# "BEETROOTS"
+# "NETHER_WART"
+# "COCOA"
+
+world-blacklist:
+  - "spawn"
+  - "arene"
+  - "Revent"
