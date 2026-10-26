@@ -9,6 +9,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.event.player.PlayerToggleSneakEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -43,6 +44,12 @@ public class SHTwerkCrops extends JavaPlugin implements Listener {
         cooldownTime = config.getLong("cooldown", 5000);
         blacklist = new HashSet<>(config.getStringList("blacklist"));
         worldBlacklist = new HashSet<>(config.getStringList("world-blacklist"));
+    }
+
+    // Vide le cooldown du joueur : sans ça la map garde une entrée par joueur pour toujours
+    @EventHandler
+    public void onQuit(PlayerQuitEvent event) {
+        cooldowns.remove(event.getPlayer().getUniqueId());
     }
 
     @EventHandler
